@@ -183,8 +183,8 @@ export default function Footer() {
             <p style={{ fontSize: "0.82rem", color: "var(--graphite-300)", lineHeight: 1.7 }}>
               100% online<br />
               Entregas via WhatsApp e e-mail<br />
-              Tarot: até 48h úteis<br />
-              Astrologia: até 14 dias úteis
+              Tarot: a partir de 48h úteis<br />
+              Astrologia: a partir de 14 dias úteis
             </p>
           </div>
         </div>

@@ -16,7 +16,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Pergunta Objetiva & Previsões Semanais / Mensais",
     descricao:
       "Resposta focada e direta sobre uma dúvida pontual do seu momento. Entrega via foto do jogo + áudio personalizado no WhatsApp.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -27,7 +27,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Ficar ou Partir?",
     descricao:
       "Uma leitura comparativa e estratégica que pesa os prós e contras de insistir na relação atual versus abrir mão e seguir em frente.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -38,7 +38,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Mesa de Carreira, Finanças & Caminhos",
     descricao:
       "Panorama completo da vida profissional e financeira. Identifica bloqueios de prosperidade, oportunidades de crescimento e momento ideal para transição de carreira.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -49,7 +49,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Bloqueios Profissionais / Financeiros",
     descricao:
       "Quais são seus bloqueios principais, nesse momento, para avançar nessas áreas da vida.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -60,7 +60,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Templo de Afrodite",
     descricao:
       "Análise clássica e profunda da dinâmica entre duas pessoas em três níveis: mental, sentimental e físico/químico, além das tendências do futuro breve da relação.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -71,7 +71,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Recado da Deusa",
     descricao:
       "A energia feminina tem um recado para você! Entenda qual energia de deusa quer se conectar com você nesse momento e receba um ritual para se conectar com sua energia.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -82,7 +82,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Previsão Geral — 4 Meses",
     descricao:
       "O que vem em breve na sua vida? Profissional, amorosa, financeira e geral. Olhamos previsão breve, bloqueio e conselho para cada área.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -93,7 +93,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Mesa de Relacionamento Completa",
     descricao:
       "O diagnóstico amoroso definitivo. Analisa a energia geral do vínculo, pensamentos e intenções ocultas e o que está escondido na relação.",
-    duracao: "Até 48h úteis",
+    duracao: "A partir de 48h úteis",
     preco: null,
     categoria: "tarot",
     ativo: true,
@@ -105,7 +105,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Mapa Astral Natal",
     descricao:
       "Estudo completo do seu mapa de nascimento — personalidade, propósito, padrões emocionais, carreira e relacionamentos. Entrega em PDF denso + gravação explicativa.",
-    duracao: "Até 14 dias úteis",
+    duracao: "A partir de 14 dias úteis",
     preco: null,
     categoria: "astrologia",
     ativo: true,
@@ -116,7 +116,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Revolução Solar",
     descricao:
       "Previsão astrológica para o ano que começa no seu aniversário. Identifica os temas principais, os meses de pico e as oportunidades do ciclo.",
-    duracao: "Até 14 dias úteis",
+    duracao: "A partir de 14 dias úteis",
     preco: null,
     categoria: "astrologia",
     ativo: true,
@@ -127,7 +127,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Sinastria — Compatibilidade Astrológica",
     descricao:
       "Análise da dinâmica entre dois mapas natais. Revela pontos de harmonia, tensão, atração e crescimento mútuo em uma relação.",
-    duracao: "Até 14 dias úteis",
+    duracao: "A partir de 14 dias úteis",
     preco: null,
     categoria: "astrologia",
     ativo: true,
@@ -138,7 +138,7 @@ export const SERVICOS: Servico[] = [
     titulo: "Astrocartografia",
     descricao:
       "Descubra quais lugares do mundo potencializam amor, carreira, espiritualidade ou expansão financeira para o seu mapa natal.",
-    duracao: "Até 14 dias úteis",
+    duracao: "A partir de 14 dias úteis",
     preco: null,
     categoria: "astrologia",
     ativo: true,

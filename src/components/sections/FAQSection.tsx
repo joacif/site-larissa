@@ -18,7 +18,7 @@ const FAQS: FAQ[] = [
     id: "2",
     pergunta: "Qual é o prazo de entrega?",
     resposta:
-      "Para o tarot, o prazo varia de 24h a 48h úteis a depender da complexidade do método e por ordem de chegada. Para a astrologia, o prazo mínimo de confecção é de 14 dias úteis.",
+      "Para o tarot, o prazo de entrega é a partir de 48h úteis a depender da complexidade do método e por ordem de chegada. Para a astrologia, o prazo é a partir de 14 dias úteis.",
     ordem: 2,
   },
   {
