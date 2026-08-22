@@ -1,26 +1,225 @@
 @import "tailwindcss";
 
+
+/* ============================================================
+   LUMINAL TAROT — Sistema de Design
+   Larissa ✶ Astrologia & Tarot
+   Tailwind CSS v4
+   ============================================================ */
+
+@theme {
+  --color-carbon-950: #141416;
+  --color-carbon-900: #1c1c20;
+  --color-carbon-800: #25252b;
+  --color-carbon-700: #303038;
+  --color-carbon-600: #3d3d46;
+  --color-graphite-700: #555560;
+  --color-graphite-500: #787884;
+  --color-graphite-400: #9898a4;
+  --color-graphite-300: #b8b8c4;
+  --color-graphite-200: #d6d6df;
+  --color-paper-50:  #fdfcfa;
+  --color-paper-100: #f8f5ef;
+  --color-paper-200: #ede8de;
+  --color-paper-300: #ddd5c5;
+  --color-gold-300: #e8c96a;
+  --color-gold-400: #d4a843;
+  --color-gold-500: #b8912a;
+  --color-gold-600: #9a7620;
+  --color-crimson-500: #8f2d4a;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-gold: pulse-gold 2.5s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.8s infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (para uso direto em style={})
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --carbon-950: #141416;
+  --carbon-900: #1c1c20;
+  --carbon-800: #25252b;
+  --carbon-700: #303038;
+  --carbon-600: #3d3d46;
+  --graphite-700: #555560;
+  --graphite-500: #787884;
+  --graphite-400: #9898a4;
+  --graphite-300: #b8b8c4;
+  --graphite-200: #d6d6df;
+  --paper-50:  #fdfcfa;
+  --paper-100: #f8f5ef;
+  --paper-200: #ede8de;
+  --paper-300: #ddd5c5;
+  --gold-300: #e8c96a;
+  --gold-400: #d4a843;
+  --gold-500: #b8912a;
+  --gold-600: #9a7620;
+  --crimson-500: #8f2d4a;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-serif: var(--font-playfair);
+  --font-sans:  var(--font-inter);
+  --section-py: clamp(5rem, 10vw, 8rem);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--carbon-900);
+  color: var(--paper-100);
+  line-height: 1.7;
+  overflow-x: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--carbon-900); }
+::-webkit-scrollbar-thumb { background: var(--gold-500); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-400); }
+
+::selection {
+  background: var(--gold-500);
+  color: var(--carbon-900);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+/* ============================================================
+   COMPONENTES REUTILIZÁVEIS
+   ============================================================ */
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--carbon-700) 25%,
+    var(--carbon-600) 50%,
+    var(--carbon-700) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 4px;
+}
+
+/* Botão primário dourado */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--gold-500);
+  color: var(--carbon-900);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  background: var(--gold-400);
+  transform: translateY(-1px);
+}
+
+.btn-gold:active { transform: translateY(0); }
+
+/* Botão outline dourado */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.7rem;
+  background: transparent;
+  color: var(--gold-400);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-500);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: var(--gold-500);
+  color: var(--carbon-900);
+}
+
+/* Card de serviço */
+.service-card {
+  background: var(--carbon-800);
+  border: 1px solid var(--carbon-600);
+  padding: 2rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  border-color: var(--gold-500);
+  box-shadow: 0 8px 32px rgba(184, 145, 42, 0.15);
+}
+
+/* ============================================================
+   ANIMAÇÕES
+   ============================================================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 145, 42, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(184, 145, 42, 0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }
