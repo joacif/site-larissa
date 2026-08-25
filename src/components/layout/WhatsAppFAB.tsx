@@ -22,7 +22,7 @@ export default function WhatsAppFAB() {
       style={{
         position: "fixed",
         bottom: "clamp(1.25rem, 4vw, 2rem)",
-        right:  "clamp(1.25rem, 4vw, 2rem)",
+        right: "clamp(1.25rem, 4vw, 2rem)",
         zIndex: 60,
         width: 56,
         height: 56,
