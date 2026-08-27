@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight, Sparkles } from "lucide-react";
 import { Servico } from "@/types/database.types";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -101,6 +101,18 @@ export const SERVICOS: Servico[] = [
   },
   // ── ASTROLOGIA ─────────────────────────────────────────────
   {
+    id: "astro-00",
+    titulo: "Leitura Express — Mapa Natal",
+    descricao:
+      "Uma leitura astrológica breve para quem deseja compreender sua essência e principais potenciais, com qualidade e de forma acessível. Inclui áudio personalizado de 25–40 min, análise da personalidade, forma de pensar e se comunicar, afetos e relacionamentos, um dos maiores potenciais e um principal desafio do mapa.",
+    duracao: "A partir de 7 dias úteis",
+    preco: null,
+    categoria: "astrologia",
+    ativo: true,
+    ordem: 9,
+    isNovo: true,
+  } as Servico & { isNovo?: boolean },
+  {
     id: "astro-01",
     titulo: "Mapa Astral Natal",
     descricao:
@@ -109,7 +121,7 @@ export const SERVICOS: Servico[] = [
     preco: null,
     categoria: "astrologia",
     ativo: true,
-    ordem: 9,
+    ordem: 10,
   },
   {
     id: "astro-02",
@@ -120,7 +132,7 @@ export const SERVICOS: Servico[] = [
     preco: null,
     categoria: "astrologia",
     ativo: true,
-    ordem: 10,
+    ordem: 11,
   },
   {
     id: "astro-03",
@@ -131,7 +143,7 @@ export const SERVICOS: Servico[] = [
     preco: null,
     categoria: "astrologia",
     ativo: true,
-    ordem: 11,
+    ordem: 12,
   },
   {
     id: "astro-04",
@@ -142,12 +154,12 @@ export const SERVICOS: Servico[] = [
     preco: null,
     categoria: "astrologia",
     ativo: true,
-    ordem: 12,
+    ordem: 13,
   },
-];
+] as (Servico & { isNovo?: boolean })[];
 
 interface ServiceCardProps {
-  servico: Servico;
+  servico: Servico & { isNovo?: boolean };
   onAgendar: (id: string, nome: string) => void;
 }
 
@@ -157,8 +169,39 @@ function ServiceCard({ servico, onAgendar }: ServiceCardProps) {
       className="service-card"
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      style={{ height: "100%", display: "flex", flexDirection: "column" }}
+      style={{ height: "100%", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}
     >
+      {/* Badge "Novo" */}
+      {servico.isNovo && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.4, ease: "backOut" }}
+          style={{
+            position: "absolute",
+            top: "1rem",
+            right: "1rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.3rem",
+            background: "linear-gradient(135deg, var(--gold-500), #c8860a)",
+            color: "var(--carbon-900)",
+            fontFamily: "var(--font-sans)",
+            fontSize: "0.6rem",
+            fontWeight: 700,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            padding: "0.3rem 0.65rem",
+            borderRadius: "2px",
+            boxShadow: "0 2px 12px rgba(184, 145, 42, 0.45)",
+            zIndex: 2,
+          }}
+        >
+          <Sparkles size={9} />
+          Novo
+        </motion.div>
+      )}
+
       {/* Categoria */}
       <span
         style={{

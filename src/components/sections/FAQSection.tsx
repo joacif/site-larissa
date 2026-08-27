@@ -35,6 +35,13 @@ const FAQS: FAQ[] = [
       "O agendamento é confirmado mediante o envio do comprovante de pagamento via Pix ou cartão de crédito.",
     ordem: 4,
   },
+  {
+    id: "5",
+    pergunta: "Qual a diferença entre a Leitura Express e o Mapa Astral Natal completo?",
+    resposta:
+      "A Leitura Express — Mapa Natal é uma porta de entrada acessível para quem quer compreender sua essência sem um mergulho longo. Ela cobre personalidade, forma de pensar e se comunicar, afetos e relacionamentos, um potencial e um desafio principais — tudo em um áudio personalizado de 25 a 40 minutos. O Mapa Astral Natal completo vai muito além: analisa todas as casas e planetas em detalhe, inclui carreira, missão de vida, família, espiritualidade em profundidade, entrega um PDF denso e uma gravação explicativa. A Leitura Express não inclui análise completa de todas as casas e planetas, nem carreira, missão, família ou espiritualidade em profundidade, e também não contempla técnicas preditivas ou previsão de trânsitos.",
+    ordem: 5,
+  },
 ];
 
 export default function FAQSection() {
