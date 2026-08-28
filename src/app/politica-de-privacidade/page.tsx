@@ -6,7 +6,22 @@ import Footer from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description:
-    "Saiba como coletamos, usamos e protegemos seus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD).",
+    "Saiba como coletamos, usamos e protegemos seus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD) no site Larissa ✶ Luminal Tarot & Astrologia.",
+  alternates: {
+    canonical: "/politica-de-privacidade",
+  },
+  openGraph: {
+    title: "Política de Privacidade | Larissa ✶ Luminal Tarot",
+    description:
+      "Saiba como protegemos seus dados pessoais e garantimos sua privacidade durante o atendimento.",
+    url: "/politica-de-privacidade",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Política de Privacidade | Larissa ✶ Luminal Tarot",
+    description: "Saiba como protegemos seus dados pessoais.",
+  },
 };
 
 export default function PoliticaPrivacidade() {
