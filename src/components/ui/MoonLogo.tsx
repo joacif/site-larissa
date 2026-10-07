@@ -35,7 +35,7 @@ export default function MoonLogo({ size = 36, className = "" }: MoonLogoProps) {
           x="22"
           y="12"
           fontSize="6"
-          fill="#e8c96a"
+          style={{ fill: "var(--logo-star)" }}
           textAnchor="middle"
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}

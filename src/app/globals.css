@@ -8,25 +8,27 @@
    ============================================================ */
 
 @theme {
-  --color-carbon-950: #141416;
-  --color-carbon-900: #1c1c20;
-  --color-carbon-800: #25252b;
-  --color-carbon-700: #303038;
-  --color-carbon-600: #3d3d46;
-  --color-graphite-700: #555560;
-  --color-graphite-500: #787884;
-  --color-graphite-400: #9898a4;
-  --color-graphite-300: #b8b8c4;
-  --color-graphite-200: #d6d6df;
-  --color-paper-50:  #fdfcfa;
-  --color-paper-100: #f8f5ef;
-  --color-paper-200: #ede8de;
-  --color-paper-300: #ddd5c5;
-  --color-gold-300: #e8c96a;
-  --color-gold-400: #d4a843;
-  --color-gold-500: #b8912a;
-  --color-gold-600: #9a7620;
+  /* Tema claro: "carbon" = fundos (creme), "paper"/"graphite" = textos (escuros) */
+  --color-carbon-950: #f2dfcf;
+  --color-carbon-900: #faede2;
+  --color-carbon-800: #f6e5d7;
+  --color-carbon-700: #f0dccb;
+  --color-carbon-600: #e3ccb8;
+  --color-graphite-700: #a69a8e;
+  --color-graphite-500: #82776d;
+  --color-graphite-400: #6b6159;
+  --color-graphite-300: #5a514a;
+  --color-graphite-200: #463f3a;
+  --color-paper-50:  #1f1c1a;
+  --color-paper-100: #2b2623;
+  --color-paper-200: #3b3430;
+  --color-paper-300: #4e4640;
+  --color-gold-300: #a57d2c;
+  --color-gold-400: #946e22;
+  --color-gold-500: #86641e;
+  --color-gold-600: #6b4f16;
   --color-crimson-500: #8f2d4a;
+  --color-btn: #1f1c1a;
 
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans:  'Inter', system-ui, sans-serif;
@@ -41,6 +43,68 @@
    CSS CUSTOM PROPERTIES (para uso direto em style={})
    ============================================================ */
 :root {
+  /* Fundos (tema claro — cor central #FAEDE2) */
+  --carbon-950: #f2dfcf;
+  --carbon-900: #faede2;
+  --carbon-800: #f6e5d7;
+  --carbon-700: #f0dccb;
+  --carbon-600: #e3ccb8;
+  /* Textos secundários */
+  --graphite-700: #a69a8e;
+  --graphite-500: #82776d;
+  --graphite-400: #6b6159;
+  --graphite-300: #5a514a;
+  --graphite-200: #463f3a;
+  /* Textos principais */
+  --paper-50:  #1f1c1a;
+  --paper-100: #2b2623;
+  --paper-200: #3b3430;
+  --paper-300: #4e4640;
+  /* Dourado escurecido para manter contraste sobre o creme */
+  --gold-300: #a57d2c;
+  --gold-400: #946e22;
+  --gold-500: #86641e;
+  --gold-600: #6b4f16;
+  --crimson-500: #8f2d4a;
+  /* Botões */
+  --btn-bg: #1f1c1a;
+  --btn-bg-hover: #3a3430;
+  --btn-text: #faede2;
+  --btn-outline-text: #1f1c1a;
+  --btn-outline-border: #1f1c1a;
+  /* Valores específicos de cada tema */
+  --hero-bg: linear-gradient(160deg, #faede2 0%, #f8e8da 50%, #f1dcc8 100%);
+  --nav-scrolled-bg: rgba(250, 237, 226, 0.94);
+  --overlay-bg: rgba(31, 28, 26, 0.45);
+  --star-rgb: 148, 110, 34;
+  --logo-star: #a57d2c;
+  --mandala-opacity: 0.12;
+  --divider-fill: var(--carbon-800);
+  --card-shadow: 0 12px 40px rgba(31, 28, 26, 0.10);
+  --service-card-shadow: 0 8px 32px rgba(31, 28, 26, 0.08);
+  --success-shadow: 0 10px 40px rgba(31, 28, 26, 0.10);
+  --testimonial-img-bg: var(--carbon-700);
+  --zoom-badge-bg: rgba(31, 28, 26, 0.85);
+  --zoom-badge-border: rgba(31, 28, 26, 0.4);
+  --zoom-badge-text: #faede2;
+  --badge-new-bg: #1f1c1a;
+  --badge-new-text: #faede2;
+  --badge-new-shadow: 0 2px 10px rgba(31, 28, 26, 0.25);
+  --error: #b83232;
+  --error-text: #b83232;
+  --success-text: #1e5e36;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-serif: var(--font-playfair);
+  --font-sans:  var(--font-inter);
+  --section-py: clamp(5rem, 10vw, 8rem);
+  color-scheme: light;
+}
+
+/* ============================================================
+   TEMA ESCURO (paleta original)
+   ============================================================ */
+:root[data-theme="dark"] {
   --carbon-950: #141416;
   --carbon-900: #1c1c20;
   --carbon-800: #25252b;
@@ -59,12 +123,40 @@
   --gold-400: #d4a843;
   --gold-500: #b8912a;
   --gold-600: #9a7620;
-  --crimson-500: #8f2d4a;
-  --font-playfair: 'Playfair Display', Georgia, serif;
-  --font-inter: 'Inter', system-ui, sans-serif;
-  --font-serif: var(--font-playfair);
-  --font-sans:  var(--font-inter);
-  --section-py: clamp(5rem, 10vw, 8rem);
+  --btn-bg: #b8912a;
+  --btn-bg-hover: #d4a843;
+  --btn-text: #1c1c20;
+  --btn-outline-text: #d4a843;
+  --btn-outline-border: rgba(184, 145, 42, 0.4);
+  --hero-bg: linear-gradient(160deg, #141416 0%, #1c1c20 45%, #24160a 100%);
+  --nav-scrolled-bg: rgba(17, 17, 17, 0.95);
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --star-rgb: 232, 201, 106;
+  --logo-star: #e8c96a;
+  --mandala-opacity: 0.06;
+  --divider-fill: #111111;
+  --card-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --service-card-shadow: 0 8px 32px rgba(184, 145, 42, 0.15);
+  --success-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(184, 145, 42, 0.1);
+  --testimonial-img-bg: #0d0d0d;
+  --zoom-badge-bg: rgba(0, 0, 0, 0.7);
+  --zoom-badge-border: rgba(184, 145, 42, 0.4);
+  --zoom-badge-text: #e8c96a;
+  --badge-new-bg: linear-gradient(135deg, #b8912a, #c8860a);
+  --badge-new-text: #1c1c20;
+  --badge-new-shadow: 0 2px 10px rgba(184, 145, 42, 0.35);
+  --error: #e05555;
+  --error-text: #e08080;
+  --success-text: #e2f9e9;
+  color-scheme: dark;
+}
+
+/* Transição suave ao alternar tema */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease !important;
 }
 
 /* ============================================================
@@ -123,14 +215,14 @@ h1, h2, h3, h4 {
   border-radius: 4px;
 }
 
-/* Botão primário dourado */
+/* Botão primário (#1F1C1A) — nome mantido por compatibilidade */
 .btn-gold {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  background: var(--gold-500);
-  color: var(--carbon-900);
+  background: var(--btn-bg);
+  color: var(--btn-text);
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.875rem;
@@ -143,34 +235,34 @@ h1, h2, h3, h4 {
 }
 
 .btn-gold:hover {
-  background: var(--gold-400);
+  background: var(--btn-bg-hover);
   transform: translateY(-1px);
 }
 
 .btn-gold:active { transform: translateY(0); }
 
-/* Botão outline dourado */
+/* Botão outline (#1F1C1A) */
 .btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 1.7rem;
   background: transparent;
-  color: var(--gold-400);
+  color: var(--btn-outline-text);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  border: 1px solid var(--gold-500);
+  border: 1px solid var(--btn-bg);
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none;
 }
 
 .btn-outline:hover {
-  background: var(--gold-500);
-  color: var(--carbon-900);
+  background: var(--btn-bg);
+  color: var(--btn-text);
 }
 
 /* Card de serviço */
@@ -184,7 +276,7 @@ h1, h2, h3, h4 {
 
 .service-card:hover {
   border-color: var(--gold-500);
-  box-shadow: 0 8px 32px rgba(184, 145, 42, 0.15);
+  box-shadow: var(--service-card-shadow);
 }
 
 /* ============================================================

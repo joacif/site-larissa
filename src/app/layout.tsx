@@ -20,8 +20,8 @@ const inter = Inter({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://luminaltarot.com.br";
 
 export const viewport: Viewport = {
-  themeColor: "#141416",
-  colorScheme: "dark",
+  themeColor: "#faede2",
+  colorScheme: "light dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -205,8 +205,14 @@ export default function RootLayout({
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
   return (
-    <html lang="pt-BR" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="pt-BR" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
+        {/* Aplica o tema salvo (claro/escuro) antes da pintura para evitar flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('luminal-theme');if(t!=='dark'&&t!=='light'){t='light';}document.documentElement.dataset.theme=t;if(t==='dark'){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content','#141416');}}catch(e){document.documentElement.dataset.theme='light';}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

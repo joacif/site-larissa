@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Ferramentas simbólicas de percepção e direcionamento para revelar o invisível e destravar seus caminhos. Leituras de Tarot e Astrologia com Larissa.",
     start_url: "/",
     display: "standalone",
-    background_color: "#141416",
-    theme_color: "#141416",
+    background_color: "#faede2",
+    theme_color: "#faede2",
     lang: "pt-BR",
     icons: [
       {

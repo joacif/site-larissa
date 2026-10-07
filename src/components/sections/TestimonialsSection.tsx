@@ -137,7 +137,7 @@ export default function TestimonialsSection() {
                 gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                 gap: "2rem",
                 alignItems: "center",
-                boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4)",
+                boxShadow: "var(--card-shadow)",
               }}
             >
               {/* Imagem do Print com Moldura e Zoom */}
@@ -149,7 +149,7 @@ export default function TestimonialsSection() {
                   borderRadius: "4px",
                   overflow: "hidden",
                   border: "1px solid rgba(184, 145, 42, 0.2)",
-                  background: "#0d0d0d",
+                  background: "var(--testimonial-img-bg)",
                   cursor: "pointer",
                   display: "flex",
                   justifyContent: "center",
@@ -173,9 +173,9 @@ export default function TestimonialsSection() {
                     position: "absolute",
                     bottom: "10px",
                     right: "10px",
-                    background: "rgba(18, 18, 18, 0.85)",
-                    border: "1px solid rgba(184, 145, 42, 0.4)",
-                    color: "var(--gold-400)",
+                    background: "var(--zoom-badge-bg)",
+                    border: "1px solid var(--zoom-badge-border)",
+                    color: "var(--zoom-badge-text)",
                     padding: "4px 8px",
                     fontSize: "0.7rem",
                     display: "flex",
@@ -257,8 +257,8 @@ export default function TestimonialsSection() {
               aria-label="Depoimento anterior"
               style={{
                 background: "none",
-                border: "1px solid rgba(184, 145, 42, 0.3)",
-                color: "var(--gold-400)",
+                border: "1px solid var(--btn-outline-border)",
+                color: "var(--btn-outline-text)",
                 width: 38,
                 height: 38,
                 display: "flex",
@@ -268,12 +268,12 @@ export default function TestimonialsSection() {
                 transition: "all 0.2s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--gold-500)";
-                e.currentTarget.style.color = "var(--carbon-900)";
+                e.currentTarget.style.background = "var(--btn-bg)";
+                e.currentTarget.style.color = "var(--btn-text)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "none";
-                e.currentTarget.style.color = "var(--gold-400)";
+                e.currentTarget.style.color = "var(--btn-outline-text)";
               }}
             >
               <ChevronLeft size={18} />
@@ -292,7 +292,7 @@ export default function TestimonialsSection() {
                     width: i === current ? 28 : 8,
                     height: 8,
                     borderRadius: 4,
-                    background: i === current ? "var(--gold-400)" : "var(--carbon-600)",
+                    background: i === current ? "var(--btn-bg)" : "var(--carbon-600)",
                     border: "none",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
@@ -307,8 +307,8 @@ export default function TestimonialsSection() {
               aria-label="Próximo depoimento"
               style={{
                 background: "none",
-                border: "1px solid rgba(184, 145, 42, 0.3)",
-                color: "var(--gold-400)",
+                border: "1px solid var(--btn-outline-border)",
+                color: "var(--btn-outline-text)",
                 width: 38,
                 height: 38,
                 display: "flex",
@@ -318,12 +318,12 @@ export default function TestimonialsSection() {
                 transition: "all 0.2s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--gold-500)";
-                e.currentTarget.style.color = "var(--carbon-900)";
+                e.currentTarget.style.background = "var(--btn-bg)";
+                e.currentTarget.style.color = "var(--btn-text)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "none";
-                e.currentTarget.style.color = "var(--gold-400)";
+                e.currentTarget.style.color = "var(--btn-outline-text)";
               }}
             >
               <ChevronRight size={18} />

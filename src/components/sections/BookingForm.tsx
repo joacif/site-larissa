@@ -146,7 +146,7 @@ export default function BookingForm() {
   const errorStyle: React.CSSProperties = {
     fontFamily: "var(--font-sans)",
     fontSize: "0.72rem",
-    color: "#e05555",
+    color: "var(--error)",
     marginTop: "0.3rem",
   };
 
@@ -218,7 +218,7 @@ export default function BookingForm() {
                 flexDirection: "column",
                 alignItems: "center",
                 gap: "1.5rem",
-                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(184, 145, 42, 0.1)",
+                boxShadow: "var(--success-shadow)",
               }}
             >
               {/* Ícone de Sucesso */}
@@ -296,7 +296,7 @@ export default function BookingForm() {
                   style={{
                     fontFamily: "var(--font-sans)",
                     fontSize: "0.9rem",
-                    color: "#e2f9e9",
+                    color: "var(--success-text)",
                     lineHeight: 1.6,
                     margin: 0,
                     display: "flex",
@@ -476,10 +476,10 @@ export default function BookingForm() {
                     {...register("nome")}
                     style={{
                       ...inputStyle,
-                      borderColor: errors.nome ? "#e05555" : "var(--carbon-600)",
+                      borderColor: errors.nome ? "var(--error)" : "var(--carbon-600)",
                     }}
                     onFocus={(e) => { e.target.style.borderColor = "var(--gold-500)"; }}
-                    onBlur={(e) => { e.target.style.borderColor = errors.nome ? "#e05555" : "var(--carbon-600)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = errors.nome ? "var(--error)" : "var(--carbon-600)"; }}
                   />
                   {errors.nome && (
                     <p id="nome-error" role="alert" style={errorStyle}>
@@ -508,10 +508,10 @@ export default function BookingForm() {
                     })}
                     style={{
                       ...inputStyle,
-                      borderColor: errors.whatsapp ? "#e05555" : "var(--carbon-600)",
+                      borderColor: errors.whatsapp ? "var(--error)" : "var(--carbon-600)",
                     }}
                     onFocus={(e) => { e.target.style.borderColor = "var(--gold-500)"; }}
-                    onBlur={(e) => { e.target.style.borderColor = errors.whatsapp ? "#e05555" : "var(--carbon-600)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = errors.whatsapp ? "var(--error)" : "var(--carbon-600)"; }}
                   />
                   {errors.whatsapp && (
                     <p id="whatsapp-error" role="alert" style={errorStyle}>
@@ -551,7 +551,7 @@ export default function BookingForm() {
                   onChange={handleServicoChange}
                   style={{
                     ...inputStyle,
-                    borderColor: errors.servico_id ? "#e05555" : "var(--carbon-600)",
+                    borderColor: errors.servico_id ? "var(--error)" : "var(--carbon-600)",
                     cursor: "pointer",
                     appearance: "none",
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8912a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")`,
@@ -755,7 +755,7 @@ export default function BookingForm() {
                     background: "rgba(224, 85, 85, 0.08)",
                     border: "1px solid rgba(224, 85, 85, 0.3)",
                     padding: "0.75rem 1rem",
-                    color: "#e08080",
+                    color: "var(--error-text)",
                     fontFamily: "var(--font-sans)",
                     fontSize: "0.85rem",
                   }}

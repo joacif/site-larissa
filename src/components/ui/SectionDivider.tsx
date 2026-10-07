@@ -6,6 +6,7 @@ export default function SectionDivider({ inverted = false }: { inverted?: boolea
         lineHeight: 0,
         transform: inverted ? "rotate(180deg)" : undefined,
         userSelect: "none",
+        background: "var(--carbon-900)",
       }}
     >
       <svg
@@ -16,7 +17,7 @@ export default function SectionDivider({ inverted = false }: { inverted?: boolea
       >
         <path
           d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z"
-          fill="#111111"
+          style={{ fill: "var(--divider-fill)" }}
         />
       </svg>
     </div>

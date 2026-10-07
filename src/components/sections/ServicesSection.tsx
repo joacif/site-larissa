@@ -184,8 +184,8 @@ function ServiceCard({ servico, onAgendar }: ServiceCardProps) {
             display: "flex",
             alignItems: "center",
             gap: "0.3rem",
-            background: "linear-gradient(135deg, var(--gold-500), #c8860a)",
-            color: "var(--carbon-900)",
+            background: "var(--badge-new-bg)",
+            color: "var(--badge-new-text)",
             fontFamily: "var(--font-sans)",
             fontSize: "0.6rem",
             fontWeight: 700,
@@ -193,7 +193,7 @@ function ServiceCard({ servico, onAgendar }: ServiceCardProps) {
             textTransform: "uppercase",
             padding: "0.3rem 0.65rem",
             borderRadius: "2px",
-            boxShadow: "0 2px 12px rgba(184, 145, 42, 0.45)",
+            boxShadow: "var(--badge-new-shadow)",
             zIndex: 2,
           }}
         >
@@ -295,8 +295,8 @@ function ServiceCard({ servico, onAgendar }: ServiceCardProps) {
               alignItems: "center",
               gap: "0.35rem",
               background: "none",
-              border: "1px solid rgba(184, 145, 42, 0.4)",
-              color: "var(--gold-400)",
+              border: "1px solid var(--btn-outline-border)",
+              color: "var(--btn-outline-text)",
               fontFamily: "var(--font-sans)",
               fontSize: "0.72rem",
               letterSpacing: "0.1em",
@@ -306,12 +306,12 @@ function ServiceCard({ servico, onAgendar }: ServiceCardProps) {
               transition: "all 0.2s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "var(--gold-500)";
-              e.currentTarget.style.color = "var(--carbon-900)";
+              e.currentTarget.style.background = "var(--btn-bg)";
+              e.currentTarget.style.color = "var(--btn-text)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "none";
-              e.currentTarget.style.color = "var(--gold-400)";
+              e.currentTarget.style.color = "var(--btn-outline-text)";
             }}
           >
             Agendar <ArrowRight size={12} />
@@ -406,10 +406,10 @@ export default function ServicesSection() {
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
                   padding: "0.6rem 1.5rem",
-                  background: activeTab === tab ? "var(--gold-500)" : "transparent",
-                  color: activeTab === tab ? "var(--carbon-900)" : "var(--graphite-400)",
+                  background: activeTab === tab ? "var(--btn-bg)" : "transparent",
+                  color: activeTab === tab ? "var(--btn-text)" : "var(--graphite-400)",
                   border: "1px solid",
-                  borderColor: activeTab === tab ? "var(--gold-500)" : "var(--carbon-600)",
+                  borderColor: activeTab === tab ? "var(--btn-bg)" : "var(--carbon-600)",
                   cursor: "pointer",
                   fontWeight: activeTab === tab ? 600 : 400,
                   transition: "all 0.2s ease",

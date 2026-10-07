@@ -40,7 +40,7 @@ export default function HeroSection() {
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
-        background: "linear-gradient(160deg, #141416 0%, #1c1c20 45%, #24160a 100%)",
+        background: "var(--hero-bg)",
         "--mx": "0px",
         "--my": "0px",
       } as React.CSSProperties}
@@ -69,7 +69,7 @@ export default function HeroSection() {
           transform: "translateY(-50%) translateX(var(--mx)) translateY(var(--my))",
           width: "clamp(280px, 45vw, 560px)",
           height: "clamp(280px, 45vw, 560px)",
-          opacity: 0.06,
+          opacity: "var(--mandala-opacity)",
           pointerEvents: "none",
         }}
         animate={{ rotate: 360 }}

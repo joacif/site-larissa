@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import MoonLogo from "@/components/ui/MoonLogo";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const NAV_LINKS = [
   { label: "Início",       href: "#hero" },
@@ -70,7 +71,7 @@ export default function Navbar() {
           zIndex: 50,
           transition: "background 0.35s ease, border-color 0.35s ease",
           background: scrolled
-            ? "rgba(17, 17, 17, 0.95)"
+            ? "var(--nav-scrolled-bg)"
             : "transparent",
           borderBottom: scrolled
             ? "1px solid rgba(184, 145, 42, 0.2)"
@@ -182,6 +183,8 @@ export default function Navbar() {
               );
             })}
 
+            <ThemeToggle id="theme-toggle-desktop" />
+
             <a
               href="#agendar"
               onClick={(e) => handleNavClick(e, "#agendar")}
@@ -192,24 +195,27 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Botão hambúrguer mobile */}
-          <button
-            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setMobileOpen((v) => !v)}
-            className="mobile-menu-btn"
-            style={{
-              background: "none",
-              border: "none",
-              color: "var(--paper-100)",
-              cursor: "pointer",
-              padding: "0.5rem",
-              display: "none",
-            }}
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* Ações mobile: tema + hambúrguer */}
+          <div className="mobile-actions" style={{ display: "none", alignItems: "center", gap: "0.5rem" }}>
+            <ThemeToggle id="theme-toggle-mobile" />
+            <button
+              aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setMobileOpen((v) => !v)}
+              className="mobile-menu-btn"
+              style={{
+                background: "none",
+                border: "none",
+                color: "var(--paper-100)",
+                cursor: "pointer",
+                padding: "0.5rem",
+                display: "flex",
+              }}
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -278,6 +284,35 @@ export default function Navbar() {
               </motion.a>
             ))}
 
+            {/* Tema com rótulo (no toque não há tooltip) */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: NAV_LINKS.length * 0.07 }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "1rem 0",
+                borderBottom: "1px solid rgba(184, 145, 42, 0.1)",
+              }}
+            >
+              <label
+                htmlFor="theme-toggle-drawer"
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--graphite-300)",
+                  cursor: "pointer",
+                }}
+              >
+                Aparência · claro / escuro
+              </label>
+              <ThemeToggle id="theme-toggle-drawer" />
+            </motion.div>
+
             <motion.a
               href="#agendar"
               onClick={(e) => handleNavClick(e, "#agendar")}
@@ -305,7 +340,7 @@ export default function Navbar() {
             style={{
               position: "fixed",
               inset: 0,
-              background: "rgba(0,0,0,0.6)",
+              background: "var(--overlay-bg)",
               zIndex: 99,
             }}
           />
@@ -316,7 +351,7 @@ export default function Navbar() {
       <style>{`
         @media (max-width: 767px) {
           .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: flex !important; }
+          .mobile-actions { display: flex !important; }
         }
       `}</style>
     </>

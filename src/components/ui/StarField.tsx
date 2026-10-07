@@ -26,6 +26,16 @@ export default function StarField() {
     let animId: number;
     let time = 0;
 
+    // Cor das estrelas vem do tema ativo (--star-rgb)
+    let starRgb = "148, 110, 34";
+    const readColor = () => {
+      const v = getComputedStyle(document.documentElement).getPropertyValue("--star-rgb").trim();
+      if (v) starRgb = v;
+    };
+    readColor();
+    const themeObserver = new MutationObserver(readColor);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
     const resize = () => {
       canvas.width  = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
@@ -52,7 +62,7 @@ export default function StarField() {
 
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(232, 201, 106, ${Math.max(0, Math.min(1, alpha))})`;
+        ctx.fillStyle = `rgba(${starRgb}, ${Math.max(0, Math.min(1, alpha))})`;
         ctx.fill();
       }
 
@@ -69,6 +79,7 @@ export default function StarField() {
     return () => {
       cancelAnimationFrame(animId);
       observer.disconnect();
+      themeObserver.disconnect();
     };
   }, []);
 
